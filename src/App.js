@@ -5,7 +5,7 @@ import { StateProvider } from "./store/GeneralContex";
 export default function Home() {
   return (
     <StateProvider>
-      <div className="m-2 p-2 w-full">
+      <div className="m-2 p-2 mx-auto ">
         <Header />
         <Game />
 

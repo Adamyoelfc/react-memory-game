@@ -225,8 +225,8 @@ const Game = () => {
       }
     }, [counter, allImages]),
     (
-      <div className=" mt-2 p-1 w-screen">
-        <div className="m-5 grid grid-rows-4 grid-flow-col gap-3 place-content-center max-w-5xl">
+      <div className="mt-2 p-1 mx-10">
+        <div className="m-5 grid grid-rows-4 grid-flow-col gap-1 md-gap-2 place-content-center max-w-5xl">
           {allImages.map((imagen) => (
             <Imagen
               key={imagen.id}

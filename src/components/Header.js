@@ -4,17 +4,17 @@ import { useContext } from "react";
 const Header = () => {
   const { health } = useContext(StateContext);
   return (
-    <div className="flex justify-between mx-10">
+    <div className="flex justify-between mx-auto">
       <h1
         style={{ fontFamily: "'Love Ya Like A Sister', cursive" }}
         className="text-6xl md:text-9xl"
       >
         Memory Game
       </h1>
-      <div className="flex">
+      <div className="flex my-auto mr-8">
         <h1
           style={{ fontFamily: "'Love Ya Like A Sister', cursive" }}
-          className="text-3xl md:text-6xl my-auto"
+          className="text-3xl md:text-6xl my-auto hidden md:flex"
         >
           health :
         </h1>
