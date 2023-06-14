@@ -1,11 +1,13 @@
+import React from "react";
 import { useState } from "react";
 import ReactCardFlip from "react-card-flip";
+import './Imagen.css'
 
 const Imagen = (props) => {
   const [flipped, setFlipped] = useState(true);
   const handlerClick = () => {
     setFlipped(!flipped);
-    props.handlerFlip(props.id, props.flipped)
+    props.handlerFlip(props.id, props.flipped);
   };
   return (
     <ReactCardFlip isFlipped={props.flipped} flipDirection="horizontal">
@@ -20,11 +22,11 @@ const Imagen = (props) => {
         />
       </div>
       <div
+        id="backside-card"
         onClick={handlerClick}
-        className="m-1 rounded drop-shadow-xl w-20 h-20 md:w-22 md:h-22 bg-black p-3"
+        className="m-1 rounded drop-shadow-xl w-20 h-20 md:w-22 md:h-22 p-3"
       ></div>
     </ReactCardFlip>
   );
 };
 export default Imagen;
-

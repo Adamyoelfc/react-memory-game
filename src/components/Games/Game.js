@@ -19,6 +19,7 @@ import swal from "sweetalert";
 // import meta from "../../assets/meta.png";
 // import androide from "../../assets/androide.png";
 
+// lista de imagenes originales no repetidas
 const images = [
   {
     name: "image1",
@@ -86,13 +87,13 @@ const images = [
   },
 ];
 
-let matchs = [];
-
 const Game = () => {
   const [allImages, setAllImages] = useState([]);
   const [counter, setCounter] = useState(0);
   const { health, setHealth } = useContext(StateContext);
 
+  // recive lista de imagenes originales, devuelve lista de imagenes
+  // originales y duplicadas
   const duplicateImage = (Img) => {
     let tempImages = [...Img];
     for (let i = 0; i < Img.length; i++) {
@@ -108,10 +109,12 @@ const Game = () => {
     return tempImages;
   };
 
+  // organiza aleatoriamente
   const randomSort = (a, b) => {
     return Math.random() - 0.5;
   };
 
+  // func iniciadora del componente
   const restartFunc = () => {
     const allImagesTemp = duplicateImage(images).sort(randomSort);
     setAllImages(allImagesTemp);
@@ -126,6 +129,7 @@ const Game = () => {
     return () => clearTimeout(timer);
   };
 
+  // func para dar la vuelta a la imagen
   const flipCard = (key, prevImages, flipped) => {
     const updateImage = prevImages.map((image) => {
       if (image.id == key) {
@@ -136,6 +140,8 @@ const Game = () => {
     return updateImage;
   };
 
+  let matchs = [];
+  //func donde se ejecuta toda la logica cuando se voltea una carta
   const handlerFlip = (key, flipped) => {
     const card = allImages.find((value) => value.id === key);
     if (card.match || !card.flipped) {
@@ -165,7 +171,7 @@ const Game = () => {
             if (!updateImage.find((image) => image.match === false)) {
               swal({
                 title: "You won! 🥳",
-                text: "You did it motherfucker! 💪🏻",
+                text: "You did it! 💪🏻",
                 icon: "success",
                 button: true,
               }).then((restart) => {
@@ -180,7 +186,7 @@ const Game = () => {
             health === 1
               ? swal({
                   title: "Game over",
-                  text: "You lost idiot! 😒, start again? 😃",
+                  text: "You lost! 😒, start again? 😃",
                   icon: "error",
                   buttons: true,
                 }).then((restart) => {

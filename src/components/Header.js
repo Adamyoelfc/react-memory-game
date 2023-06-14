@@ -1,3 +1,4 @@
+import React from "react";
 import StateContext from "../store/GeneralContex";
 import { useContext } from "react";
 

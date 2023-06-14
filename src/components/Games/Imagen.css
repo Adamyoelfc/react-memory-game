@@ -1,0 +1,5 @@
+#backside-card {
+  background-image: url('../../assets/backside-card.png');
+  background-size: cover;
+  background-position: center;
+}

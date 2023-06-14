@@ -8,12 +8,7 @@ export default function Home() {
       <div className="m-2 p-2 mx-auto ">
         <Header />
         <Game />
-
-        {/* <Footer /> */}
-
       </div>
     </StateProvider>
   );
 }
-
-
