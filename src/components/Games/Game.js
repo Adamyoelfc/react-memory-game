@@ -87,6 +87,7 @@ const images = [
   },
 ];
 
+let matchs = [];
 const Game = () => {
   const [allImages, setAllImages] = useState([]);
   const [counter, setCounter] = useState(0);
@@ -140,7 +141,6 @@ const Game = () => {
     return updateImage;
   };
 
-  let matchs = [];
   //func donde se ejecuta toda la logica cuando se voltea una carta
   const handlerFlip = (key, flipped) => {
     const card = allImages.find((value) => value.id === key);
